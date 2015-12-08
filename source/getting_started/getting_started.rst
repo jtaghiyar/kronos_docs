@@ -22,15 +22,12 @@ You need to have the following dependencies installed:
     "PyYaml", "3.11"
     "drmaa-python", "0.7.6"
 
-You can simply create a file called ``requirements.txt`` that looks like this:
+where ``drmaa-python`` is optional and you will need to install it only if you want to use ``-b drmaa`` when running a pipeline on a cluster.
 
-.. code-block:: rest
+.. topic:: Info
 
-    pyyaml>=3.11
-    ruffus==2.4.1
-    drmaa>=0.7.6
-
-which can be used when installing the package.
+    ``PyYaml`` and ``ruffus`` are installed as dependencies when installing ``kronos``. 
+    So, you would only need to install ``drmaa-python``.
 
 Install
 =======
@@ -38,7 +35,7 @@ You can install ``kronos`` using ``pip``:
 
 .. code-block:: bash
 
-    pip install kronos_pipeliner -r requirements.txt
+    pip install kronos_pipeliner
 
 .. toctree::
 ..   :maxdepth: 2
