@@ -4,7 +4,7 @@ Getting started
 
 Download
 ========
-You can get the ``kronos`` package from `PyPi <https://pypi.python.org/pypi>`_.
+You can get the ``kronos`` package from `PyPi <https://pypi.python.org/pypi/kronos-pipeliner>`_.
 You can also clone it from `GitHub repository <https://github.com/jtaghiyar/kronos>`_.
 
 .. The *components* can also be cloned from the github repository `here <https://svn.bcgsc.ca/stash/projects/PF/repos/pipeline-components/browse>`_.
