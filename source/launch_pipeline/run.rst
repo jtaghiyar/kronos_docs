@@ -82,8 +82,9 @@ This is the list of all the input options you can use with ``run`` command:
     "**-q** or **--qsub_options**", "native qsub specifications for the cluster in a single string - *optional* "
     "**-r** or **--run_id**", "pipeline :ref:`run id <run_id>` - *optional* "
     "**-s** or **--setup_file**", "path to the :ref:`setup file <setup_file>`- *optional* "
-    "**-w** or **--working_dir**", "path to the :ref:`working directory <working_dir>` - *optional* "
     "**-y** or **--config_file**", "path to the :ref:`config_file.yaml <config_file>`- *optional* "
+
+..     "**-w** or **--working_dir**", "path to the :ref:`working directory <working_dir>` - *optional* "
 
 .. note::
 
