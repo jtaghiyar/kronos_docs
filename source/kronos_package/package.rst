@@ -184,7 +184,7 @@ The command is used as follows:
 
 .. code-block:: bash
     
-    kronos -w </path/to/working_dir> run -k </path/to/my_pipeline_script.py> -c </path/to/components_dir> [options]
+    kronos run -k </path/to/my_pipeline_script.py> -c </path/to/components_dir> [options]
 
 .. topic:: Info
 
