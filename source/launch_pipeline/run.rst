@@ -140,7 +140,7 @@ When launching a pipeline, each task in the pipeline can individually be run loc
 For this you need to use the :ref:`use_cluster` attribute for each task in the configuration file.
 
 You can also launch the pipeline in the cloud. 
-Please refer to `this page <https://github.com/brunogrande/kronos-cloud-guide>`_ for more information.  
+Please refer to the :ref:`deploy_kronos_to_the_cloud` for more information.
    
 .. _how_to_init_pipeline:
 

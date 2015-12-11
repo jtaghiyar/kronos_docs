@@ -2,8 +2,13 @@
 Guides
 ======
 
-Deploying Kronos to the Cloud (Amazon AWS)
-==========================================
+.. _deploy_kronos_to_the_cloud:
+
+Guide for Deploying Kronos to the Cloud
+=======================================
+
+Kronos' agnosticism towards the compute grid scheduler allows it to seamlessly be used in combination with various "cloud cluster" management tools, such as `StarCluster <http://star.mit.edu/cluster/index.html>`_. 
+This guide will present the steps needed to get started with running your very own cloud cluster.
 
 Setup StarCluster
 -----------------
@@ -81,7 +86,7 @@ Lastly, we need to change the default AMI used for creating EC2 instances.
 The default AMIs that StarCluster offers are a bit dated, with the latest one running Ubuntu 13. 
 We have created an updated AMI running Ubuntu 14.04 LTS with Kronos pre-installed.
 
-The latest AMI for running Kronos is: ``ami-97efa3fd``.
+The latest AMI for running Kronos is: ``ami-479fd72d``.
 
 Additionally, this image requires instances that support hardware virtual machine (HVM) images. 
 This allows for special features such as `Enhanced Networking <https://aws.amazon.com/ec2/instance-types/#enhanced_networking>`__.
@@ -105,9 +110,8 @@ It also allows you to have large volumes, which is necessary when dealing with s
 
 .. warning:: 
 
-    As I said, EBS volumes persist after cluster termination.
-    Therefore, they continue to cost money as long as they exist. 
-    Don't forget about them.
+    Because EBS volumes persist after cluster termination, they will continue to cost you. 
+    Be sure not to forget about them. 
 
 StarCluster offers handy commands for creating new EBS volumes. 
 Here, we are creating a 1-TB volume called "awesome\_study\_volume". This process can take a while, depending on the size of your volume; it took 17 minutes when I ran it. 
@@ -117,7 +121,7 @@ Notice that we're shutting down the instance after volume creation, as we won't 
 
     $ starcluster createvolume --name= awesome_study_volume --shutdown-volume-host 1000 us-east-1c
 
-.. warning::
+.. note::
     
     Unfortunately, StarCluster doesn't support the creation of the newer SSD EBS volumes (gp2), which supports higher performance and sizes greater than 1 TB. 
     If you need either of these, you can `create a volume <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html>`__ using the Console interface.
@@ -159,13 +163,17 @@ It will take a few minutes for everything to setup.
 Setup Kronos
 ------------
 
-Once you remotely login into your cloud cluster, you'll notice that Kronos is already installed for you. 
-The root Python (``/usr/bin/python``) already has Kronos' dependencies installed.
+After you are done setting up your cloud cluster, you can remotely login using your key pair without having to enter a password.
 
 .. code:: bash
 
     # SSH into your cloud cluster's master node
     $ starcluster sshmaster awesome_study_cluster
+
+The root Python (``/usr/bin/python``) already has Kronos' dependencies installed in addition to Kronos itself.
+
+.. code:: bash
+
     $ kronos --help
     usage: kronos [-h] [-w WORKING_DIR] [-v]
                   {make_component,make_config,update_config,init,run} ...
