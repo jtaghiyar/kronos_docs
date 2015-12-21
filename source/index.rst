@@ -27,6 +27,7 @@ Table of Contents
    Configuration file <config_file/config_file>
    Components <components/components>
    Pipelines <launch_pipeline/run>
+   Guides <guides/guides>
    License <license/LICENSE>
    Contacts <contact/contacts.rst>
 ..   Versions <version/version>
@@ -53,4 +54,3 @@ Table of Contents
 .. topic:: Date last updated
 
     2015-12-21
-    
