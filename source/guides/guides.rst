@@ -86,7 +86,7 @@ Lastly, we need to change the default AMI used for creating EC2 instances.
 The default AMIs that StarCluster offers are a bit dated, with the latest one running Ubuntu 13. 
 We have created an updated AMI running Ubuntu 14.04 LTS with Kronos pre-installed.
 
-The latest AMI for running Kronos is: ``ami-479fd72d``.
+The latest AMI for running Kronos is: ``ami-0f326465``.
 
 Additionally, this image requires instances that support hardware virtual machine (HVM) images. 
 This allows for special features such as `Enhanced Networking <https://aws.amazon.com/ec2/instance-types/#enhanced_networking>`__.
