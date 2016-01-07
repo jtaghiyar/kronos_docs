@@ -84,6 +84,7 @@ This is the list of all the input options you can use with ``run`` command:
     "**-s** or **--setup_file**", "path to the :ref:`setup file <setup_file>`- *optional* "
     "**-w** or **--working_dir**", "path to the :ref:`working directory <working_dir>` - *optional* "
     "**-y** or **--config_file**", "path to the :ref:`config_file.yaml <config_file>`- *optional* "
+    **--no_prefix**", "switch off the prefix that is added to all the output files by Kronos - *optional* "
 
 .. note::
 
