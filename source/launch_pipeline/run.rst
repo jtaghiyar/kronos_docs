@@ -66,25 +66,25 @@ Input options of ``run`` command
 This is the list of all the input options you can use with ``run`` command:
 
 .. csv-table:: 
-    :header: "Option", "Description"
-    :widths: 20, 60
+    :header: "Option", "Default", "Description"
+    :widths: 20, 40, 60
     
-    "**-h** or **--help**", "print help - optional"
-    "**-b** or **--job_scheduler**", "job scheduler used to manage jobs on the cluster - optional"
-    "**-c** or **--components_dir**", "path to :ref:`components_dir <components_dir>`- *required* "
-    "**-d** or **--drmaa_library_path**", "path to :ref:`drmaa_library <use_cluster>` - *optional* "
-    "**-e** or **--pipeline_name**", "pipeline name - *optional* "
-    "**-i** or **--input_samples**", "path to the input :ref:`samples file <samples_file>` - *optional* "
-    "**-j** or **--num_jobs**", "maximum number of simultaneous jobs per pipeline - *optional* "
-    "**-k** or **--kronos_pipeline**", "path to ``kronos``-made :ref:`pipeline script <init>`- *optional* "
-    "**-n** or **--num_pipelines**", "maximum number of simultaneous running pipelines - *optional* "
-    "**-p** or **--python_installation**", "path to python executable - *optional* "
-    "**-q** or **--qsub_options**", "native qsub specifications for the cluster in a single string - *optional* "
-    "**-r** or **--run_id**", "pipeline :ref:`run id <run_id>` - *optional* "
-    "**-s** or **--setup_file**", "path to the :ref:`setup file <setup_file>`- *optional* "
-    "**-w** or **--working_dir**", "path to the :ref:`working directory <working_dir>` - *optional* "
-    "**-y** or **--config_file**", "path to the :ref:`config_file.yaml <config_file>`- *optional* "
-    **--no_prefix**", "switch off the prefix that is added to all the output files by Kronos - *optional* "
+    "**-h** or **--help**", "False", "print help - optional"
+    "**-b** or **--job_scheduler**", "drmaa", "job scheduler used to manage jobs on the cluster - optional"
+    "**-c** or **--components_dir**", "None", "path to :ref:`components_dir <components_dir>`- *required* "
+    "**-d** or **--drmaa_library_path**", "lib/lx24-amd64/libdrmaa.so", "path to :ref:`drmaa_library <use_cluster>` - *optional* "
+    "**-e** or **--pipeline_name**", "None", "pipeline name - *optional* "
+    "**-i** or **--input_samples**", "None", "path to the input :ref:`samples file <samples_file>` - *optional* "
+    "**-j** or **--num_jobs**", "1", "maximum number of simultaneous jobs per pipeline - *optional* "
+    "**-k** or **--kronos_pipeline**", "None", "path to ``kronos``-made :ref:`pipeline script <init>`- *optional* "
+    "**-n** or **--num_pipelines**", "1", "maximum number of simultaneous running pipelines - *optional* "
+    "**-p** or **--python_installation**", "python", "path to python executable - *optional* "
+    "**-q** or **--qsub_options**", "None", "native qsub specifications for the cluster in a single string - *optional* "
+    "**-r** or **--run_id**", "None (current timestamp will be used)", "pipeline :ref:`run id <run_id>` - *optional* "
+    "**-s** or **--setup_file**", "None", "path to the :ref:`setup file <setup_file>`- *optional* "
+    "**-w** or **--working_dir**", "current working directory", "path to the :ref:`working directory <working_dir>` - *optional* "
+    "**-y** or **--config_file**", "None", "path to the :ref:`config_file.yaml <config_file>`- *optional* "
+    **--no_prefix**", "False", "switch off the prefix that is added to all the output files by Kronos - *optional* "
 
 .. note::
 
@@ -158,14 +158,14 @@ and then by :ref:`running the script <how_to_run_python_script>`.
 The ``init`` command has the followig input options:
   
 .. csv-table:: 
-    :header: "Option", "Description"
-    :widths: 20, 60
+    :header: "Option", "Default", "Description"
+    :widths: 20, 40, 60
     
-    "**-h** or **--help**", "print help - optional"
-    "**-e** or **--pipeline_name**", "pipeline name - *required* "
-    "**-i** or **--input_samples**", "path to the input :ref:`samples file <samples_file>` - *optional* "
-    "**-s** or **--setup_file**", "path to the :ref:`setup file <setup_file>`- *optional* "
-    "**-y** or **--config_file**", "path to the :ref:`config_file.yaml <config_file>`- *required* "
+    "**-h** or **--help**", "False", "print help - optional"
+    "**-e** or **--pipeline_name**", "None", "pipeline name - *required* "
+    "**-i** or **--input_samples**", "None", "path to the input :ref:`samples file <samples_file>` - *optional* "
+    "**-s** or **--setup_file**", "None", "path to the :ref:`setup file <setup_file>`- *optional* "
+    "**-y** or **--config_file**", "None", "path to the :ref:`config_file.yaml <config_file>`- *required* "
 
 .. _samples_file:
 
@@ -284,23 +284,23 @@ where ``my_pipeline.py`` is the pipeline script you want to run.
 This is the list of all the input options you can use:
 
 .. csv-table:: 
-    :header: "Option", "Description"
-    :widths: 20, 60
+    :header: "Option", "Default", "Description"
+    :widths: 20, 40, 60
     
-    "**-h** or **--help**", "print help - optional"
-    "**-b** or **--job_scheduler**", "job scheduler used to manage jobs on the cluster - optional"
-    "**-c** or **--components_dir**", "path to :ref:`components_dir <components_dir>`- *required* "
-    "**-d** or **--drmaa_library_path**", "path to :ref:`drmaa_library <use_cluster>` - *optional* "
-    "**-j** or **--num_jobs**", "maximum number of simultaneous jobs per pipeline - *optional* "
-    "**-l** or **--log_file**", "name of the log file - *optional* "
-    "**-n** or **--num_pipelines**", "maximum number of simultaneous running pipelines - *optional* "
-    "**-p** or **--python_installation**", "path to python executable - *optional* "
-    "**-q** or **--qsub_options**", "native qsub specifications for the cluster in a single string - *optional* "
-    "**-r** or **--run_id**", "pipeline :ref:`run id <run_id>` - *optional* "
-    "**-w** or **--working_dir**", "path to the :ref:`working directory <working_dir>` - *optional* "
+    "**-h** or **--help**", "False", "print help - optional"
+    "**-b** or **--job_scheduler**", "drmaa", "job scheduler used to manage jobs on the cluster - optional"
+    "**-c** or **--components_dir**", "None", "path to :ref:`components_dir <components_dir>`- *required* "
+    "**-d** or **--drmaa_library_path**", "lib/lx24-amd64/libdrmaa.so", "path to :ref:`drmaa_library <use_cluster>` - *optional* "
+    "**-e** or **--pipeline_name**", "None", "pipeline name - *optional* "
+    "**-j** or **--num_jobs**", "1", "maximum number of simultaneous jobs per pipeline - *optional* "
+    "**-l** or **--log_file**", "None", "name of the log file - *optional* "
+    "**-n** or **--num_pipelines**", "1", "maximum number of simultaneous running pipelines - *optional* "
+    "**-p** or **--python_installation**", "python", "path to python executable - *optional* "
+    "**-q** or **--qsub_options**", "None", "native qsub specifications for the cluster in a single string - *optional* "
+    "**-r** or **--run_id**", "None (current timestamp will be used)", "pipeline :ref:`run id <run_id>` - *optional* "
+    "**-w** or **--working_dir**", "current working directory", "path to the :ref:`working directory <working_dir>` - *optional* "
+    "**--no_prefix**", "False", "Switch off the prefix that is added to all the output files by Kronos - *optional*"
 
-..    "**-e** or **--pipeline_name**", "pipeline name - *optional* "
-..    "**--no_prefix**", "Switch off the prefix that is added to all the output files - *optional*"
 ..    "**--draw_vertically**", "specify whether to draw the workflow plot vertically - *optional* "
 ..    "**--extension**", "specify the desired extension of the resulting workflow plot, e.g. pdf, jpeg, png - *optional* "
 ..    "**--no_key_legend**", "if True, hide the legend in the workflow plot - *optional* "
