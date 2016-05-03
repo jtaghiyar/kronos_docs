@@ -532,7 +532,7 @@ You can use the following keywords in the configuration file which will be autom
     "``$pipeline_name``", "the name of the pipeline"
     "``$pipeline_working_dir``", "the path to the :ref:`working directory <working_dir>`"
     "``$run_id``", ":ref:`run ID <run_id>`"
-    "``$sample_id``", "the ID used in the :ref:`samples section <samples_sec>`
+    "``$sample_id``", "the ID used in the :ref:`samples section <samples_sec>`"
     
 .. warning::
 
