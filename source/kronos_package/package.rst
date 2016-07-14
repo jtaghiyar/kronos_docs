@@ -1,40 +1,40 @@
 ========================
-kronos package
+Kronos package
 ========================
 
 This section explains:
 
-- :ref:`kronos features <pf_features>`
-- :ref:`kronos commands <kronos_commands>`
+- :ref:`Kronos features <pf_features>`
+- :ref:`Kronos commands <kronos_commands>`
 
 .. _pf_features:
 
-``kronos`` features
+``Kronos`` features
 =============================
-``kronos`` package offers the following features which eliminate the difficulties of making a pipeline:
+``Kronos`` package offers the following features which eliminate the difficulties of making a pipeline:
 
 .. topic:: Info
 
-    We define a *pipeline* as a `DAG <http://en.wikipedia.org/wiki/Directed_acyclic_graph>`_ composed of different :ref:`tasks <task_sec>`.
+    We define a *pipeline* (also called *workflow*) as a `DAG <http://en.wikipedia.org/wiki/Directed_acyclic_graph>`_ composed of different :ref:`tasks <task_sec>`.
 
-- :ref:`Single configuration file <config_file>`: the whole pipeline can be configured using a single configuration file
-- :ref:`Parallelization <parallelization>`: parallelizable tasks are automatically run in parallel
-- :ref:`Synchronization <synchronization>`: parallel tasks can be synchronized based on any of their parameters
-- :ref:`Local, cluster and cloud support <cloud>`: the pipelines can be run locally or on a cluster of computing nodes or on cloud
-- :ref:`Forced dependencies <forced_dependencies>`: any task can be forced to wait for any other tasks
-- :ref:`Breakpoints <breakpoint>`: a pipeline can be programmatically paused and restated from any point in the pipeline
-- :ref:`Boilerplates <boilerplate>`: an executable boilerplate or script can be injected to a task and is run prior to running the task itself
-- :ref:`Keywords <config_file_keywords>`: a set of specific keywords in the configuration file which will be automatically replaced by proper values in the run time
-- :ref:`Parameter sweep <samples_sec>`: a pipeline can be run for a list of different values for a set of input arguments
-- :ref:`Output directory customization <output_dir_customization>`: the structure of the output directory where all the results are stored can be configured by the user
-- :ref:`Event logging <>`: all the events are automatically logged
+- :ref:`Single configuration file <config_file>`: the whole pipeline can be configured using a single configuration file.
+- :ref:`Parallelization <parallelization>`: parallelizable tasks are automatically run in parallel.
+- :ref:`Synchronization <synchronization>`: parallel tasks can be synchronized based on any of their parameters.
+- :ref:`Local, cluster and cloud support <cloud>`: the pipelines can be run locally or on a cluster of computing nodes or in the cloud.
+- :ref:`Forced dependencies <forced_dependencies>`: any task can be forced to wait for any other tasks.
+- :ref:`Breakpoints <breakpoint>`: a pipeline can be programmatically paused and restated from any point in the pipeline.
+- :ref:`Boilerplates <boilerplate>`: an executable boilerplate or script can be injected to a task and is run prior to running the task itself.
+- :ref:`Keywords <config_file_keywords>`: a set of specific keywords in the configuration file which will be automatically replaced by proper values in the runtime.
+- :ref:`Parameter sweep <samples_sec>`: a pipeline can be run for a list of different values for a set of input arguments.
+- :ref:`Output directory customization <output_dir_customization>`: the structure of the output directory where all the intermediate files and results are stored can be configured by the user in the configuration file.
+- :ref:`Event logging <>`: all the events are automatically logged.
 
 
 .. _kronos_commands:
 
-``kronos`` commands
+``Kronos`` commands
 =====================
-Once kronos is installed, it is added to the PATH, i.e. ``kronos`` becomes an available command which has the following sub-commands:
+Once Kronos is installed, it is added to the PATH, *i.e.* ``kronos`` becomes an available command which has the following sub-commands:
 
 .. csv-table:: 
     :header: "Command", "Description"
@@ -44,7 +44,7 @@ Once kronos is installed, it is added to the PATH, i.e. ``kronos`` becomes an av
     "``make_config``", "make a new configuration file "
     "``update_config``", "copy the fields of old configuration file to new configuration file"
     "``init``", "initialize a pipeline from the given configuration file "
-    "``run``", "run kronos-made pipelines with optional initialization"
+    "``run``", "run Kronos-made pipelines with optional initialization"
 
 
 as well as the following options:
@@ -53,9 +53,9 @@ as well as the following options:
     :header: "Options", "Description"
     :widths: 20, 40
     
-    "**-h** or **--help**", "print help - optional"
-	"**-v** or **--version**", "show program's version number and exit - optional"
-	"**-w** or **--working_dir**", "path/to/working_dir - optional"
+    "**-h** or **--help**", "print help - *optional*"
+	"**-v** or **--version**", "show program's version number and exit - *optional*"
+	"**-w** or **--working_dir**", "path/to/working_dir - *optional*"
 
 .. topic:: Tip 
     
@@ -137,7 +137,7 @@ For example, the following code creates a new configuration file called :file:`n
 
 ``init`` 
 *************************
-This command initializes a new pipeline (i.e. creates a Python script) based on the input configuration file.
+This command initializes a new pipeline (*i.e.* creates a Python script) based on the input configuration file.
 
 .. topic:: Info
 
@@ -155,7 +155,7 @@ For example, the following code creates a Python script called :file:`my_pipelin
 
     kronos -w my_working_dir init -y my_config_file.yaml -e my_pipeline
 
-The output Python script of this command can be run using kronos :ref:`run <run>` command or can be run directly as a Python script.
+The output Python script of this command can be run using Kronos :ref:`run <run>` command or can be run directly as a Python script.
    
 .. topic:: Info
 
@@ -172,13 +172,13 @@ The output Python script of this command can be run using kronos :ref:`run <run>
     - intermediate_config_files
     - intermediate_pipeline_scripts
 
-    These directories are used by ``kronos`` and users should NOT modify them.
+    These directories are used by ``Kronos`` and users should NOT modify them.
 
 .. _run:
 
 ``run`` 
 ****************
-This command runs kronos-made pipelines, i.e. pipeline scripts made by ``init`` command.
+This command runs Kronos-made pipelines, *i.e.* pipeline scripts made by ``init`` command.
 
 The command is used as follows:
 
@@ -186,9 +186,17 @@ The command is used as follows:
     
     kronos run -k </path/to/my_pipeline_script.py> -c </path/to/components_dir> [options]
 
+.. warning::
+
+    It is required to export the path of the :ref:`components directory <components_dir>` to the ``PYTHONPATH`` environment variable prior to running the ``run`` command:
+
+    .. code-block:: bash
+    
+        export PYTHONPATH=</path/to/components_dir>:$PYTHONPATH
+
 .. topic:: Info
 
-    You can use ``run`` command to initialize and run the pipeline using the configuration file directly (i.e. without the need to ``init`` first).
+    You can use ``run`` command to initialize and run the pipeline using the configuration file directly (*i.e.* without the need to ``init`` first).
     See :ref:`Run the pipeline using run command <how_to_run_pipeline>` for more information. 
     
 
