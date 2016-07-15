@@ -11,7 +11,7 @@ The workflows are also highly modular and can be easily updated by editing their
 
 .. note::
 
-    Throughout this documentation we will use *workflow* and *pipeline* interchangably.
+    Throughout this documentation we will use *workflow* and *pipeline* interchangeably.
 
 .. This document has the following major parts: 
 
