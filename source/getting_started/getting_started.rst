@@ -46,7 +46,7 @@ or upgrade it by:
 
 .. topic:: Tip
 
-    For a quick start, withoug having to go through all the details, you can directly refer to :ref:`Quick tutorial <quick_tutorial>`.
+    For a quick start, without having to go through all the details, you can directly refer to :ref:`Quick tutorial <quick_tutorial>`.
 
 .. toctree::
 ..   :maxdepth: 2
